@@ -1,12 +1,9 @@
 public class RecipeManager {
 
-    public String getRecipeTitle() {
-        String title = "Omelet Rice";
-        return title;
-    }
-
     public static void main(String[] args) {
-        RecipeManager manager = new RecipeManager();
-        System.out.println(manager.getRecipeTitle());
+        //レシピをひとつ用意して
+        Recipe recipe = new Recipe("Omelet Rice");
+        //レシピ名を出力する
+        System.out.println(recipe.getTitle());
     }
 }
