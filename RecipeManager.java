@@ -14,20 +14,20 @@ public class RecipeManager {
         this.recipeList = new ArrayList<Recipe>();
     }
 
-    //ƒŒƒVƒs‚ğ‚Ğ‚Æ‚Â’Ç‰Á‚·‚é
+    //ãƒ¬ã‚·ãƒ”ã‚’ã²ã¨ã¤è¿½åŠ ã™ã‚‹
     public void addRecipe(Recipe recipe){
         this.recipeList.add(recipe);
     }
-    //ƒŒƒVƒs”‚ğo—Í‚·‚é
+    //ãƒ¬ã‚·ãƒ”æ•°ã‚’å‡ºåŠ›ã™ã‚‹
     public int countRecipes(){
         return this.recipeList.size();
     }
-    //i”Ô–Ú‚ÌƒŒƒVƒs‚ğo—Í‚·‚é
+    //iç•ªç›®ã®ãƒ¬ã‚·ãƒ”ã‚’å‡ºåŠ›ã™ã‚‹
     public Recipe getRecipe(int i){
         return this.recipeList.get(i);
     }
 
-    //ƒŒƒVƒsƒŠƒXƒg‚ğƒtƒ@ƒCƒ‹‚©‚ç“Ç‚İ‚Ş
+    //ãƒ¬ã‚·ãƒ”ãƒªã‚¹ãƒˆã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã‚€
     public void loadRecipesFromFile(){
         try {
             File file = new File(this.recipefile);
@@ -35,7 +35,7 @@ public class RecipeManager {
             BufferedReader br = new BufferedReader(filereader);
             String line;
             while ((line = br.readLine()) != null) {
-                //s‚²‚Æ‚Ìˆ—‚ÍRecipeƒNƒ‰ƒX‚Ås‚Á‚Ä‚¢‚Ü‚·
+                //è¡Œã”ã¨ã®å‡¦ç†ã¯Recipeã‚¯ãƒ©ã‚¹ã§è¡Œã£ã¦ã„ã¾ã™
                 Recipe recipe = Recipe.makeRecipeFromCSV(line);
                 this.addRecipe(recipe);
             }
@@ -50,13 +50,13 @@ public class RecipeManager {
 
     }
 
-    //mainˆø”F@‘æˆêˆø”‚ÉƒŒƒVƒsƒtƒ@ƒCƒ‹–¼
+    //mainå¼•æ•°ï¼šã€€ç¬¬ä¸€å¼•æ•°ã«ãƒ¬ã‚·ãƒ”ãƒ•ã‚¡ã‚¤ãƒ«å
     public static void main(String[] args) {
-        //ƒŒƒVƒsƒ}ƒl[ƒWƒƒ[‚ğ—pˆÓ
+        //ãƒ¬ã‚·ãƒ”ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã‚’ç”¨æ„
         RecipeManager manager = new RecipeManager();
-        //ƒŒƒVƒsƒtƒ@ƒCƒ‹‚©‚çƒf[ƒ^‚ğƒ[ƒh
+        //ãƒ¬ã‚·ãƒ”ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ãƒ‡ãƒ¼ã‚¿ã‚’ãƒ­ãƒ¼ãƒ‰
         manager.loadRecipesFromFile();
-        //ƒŒƒVƒs–¼‚ğo—Í‚·‚é
+        //ãƒ¬ã‚·ãƒ”åã‚’å‡ºåŠ›ã™ã‚‹
         for(int i=0;i<manager.countRecipes();i++){
             Recipe rcp = manager.getRecipe(i);
             System.out.println(rcp.getTitle());

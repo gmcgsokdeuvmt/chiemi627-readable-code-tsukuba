@@ -14,13 +14,13 @@ public class Recipe {
     }
 
     public static Recipe makeRecipeFromCSV(String line){
-        //Recipe�I�u�W�F�N�g�����
+        //Recipeオブジェクトを作る
         Recipe recipe = new Recipe();
-        //CSV�t�@�C������Recipe�f�[�^�����
+        //CSVファイルからRecipeデータを作る
         String[] items = line.split(",");
 
-        //�Ƃ肠�����ŏ���0�ԖڂɃ^�C�g��
-        //TODO: �t�H�[�}�b�g�̕ω��ɑΉ��ł���悤�ɂ���
+        //とりあえず最初は0番目にタイトル
+        //TODO: フォーマットの変化に対応できるようにする
         recipe.title = items[0];
 
         return recipe;
