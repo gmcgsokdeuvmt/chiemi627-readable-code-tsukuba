@@ -1,16 +1,28 @@
-## �T�v
-- ���V�s���ЂƂo�͂��܂�
-- ���݂�Spec 3���A�b�v���[�h���Ă��܂�
+## 概要
+- レシピをひとつ出力します
+- 現在はSpec 3をアップロードしています
 
-## �R���p�C���̎d��
-- javac �ŃR���p�C�����Ă�������
+## コンパイルの仕方
+- javac でコンパイルしてください
 ```java
  % javac *.java
 ```
 
-## ���s�̎d��
-- class�t�@�C���Ɠ����f�B���N�g���� recipe-data.csv�t�@�C����p�ӂ��܂�
-- RecipeManager��java�Ŏ��s���܂�
+## 実行の仕方
+- classファイルと同じディレクトリに recipe-data.csvファイルを用意します
+- RecipeManagerをjavaで実行します
 ```java
  % java RecipeManager
+```
+
+## recipe-data.csv について
+このCSVファイルにはレシピデータを入れておきます。レシピデータは現在**「レシピ名」**のみを想定しています。
+
+エンコーディングは想定する出力先と同じようにしてください。このリポジトリでは`cp932`を想定しています。
+
+### 例
+```
+レシピ名1
+レシピ名2
+...
 ```
