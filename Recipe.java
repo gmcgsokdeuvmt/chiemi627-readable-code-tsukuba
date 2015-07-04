@@ -1,6 +1,8 @@
 /**
  * Created by chiemi on 2015/07/04.
  */
+import java.io.*;
+
 public class Recipe {
     public String title;
 
@@ -18,7 +20,7 @@ public class Recipe {
         Recipe recipe = new Recipe();
         //CSVファイルからRecipeデータを作る
         String[] items = line.split(",");
-
+        
         //とりあえず最初は0番目にタイトル
         //TODO: フォーマットの変化に対応できるようにする
         recipe.title = items[0];
